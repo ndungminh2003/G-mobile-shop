@@ -1,3 +1,3 @@
-/techstore-backend/node_modules/
-/techstore-website/node_modules/
+/client/node_modules/
+/server/node_modules/
 /.vscode/
