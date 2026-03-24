@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { useEffect } from "react";
 import CustomInput from "../../components/CustomInput";
 import { useLocation, useNavigate } from "react-router-dom";
 import "react-quill/dist/quill.snow.css";
@@ -6,13 +6,17 @@ import { toast } from "react-toastify";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
+import { getAUser, createUserInAdmin, updateAUser, resetState } from "../../features/account/accountSlice";
 
-import {
-  getAUser,
-  createUserInAdmin,
-  updateAUser,
-  resetState,
-} from "../../features/account/accountSlice";
+const defaultCustomertState = {
+  name: "",
+  email: "",
+  mobile: "",
+  dateOfBirth: "",
+  role: "user",
+  address: "",
+  password: "",
+};
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
@@ -27,16 +31,6 @@ let schema = yup.object().shape({
   role: yup.string().required("Role is Required"),
   address: yup.string().required("Address is Required"),
 });
-
-const defaultCustomertState = {
-  name: "",
-  email: "",
-  mobile: "",
-  dateOfBirth: "",
-  role: "user",
-  address: "",
-  password: "",
-};
 
 const AddCustomer = () => {
   const dispatch = useDispatch();

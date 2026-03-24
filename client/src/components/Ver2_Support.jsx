@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
-import Avatar from '../Chat/Avatar'
-import SupportWindow from '../Chat/SupportWindow'
+import Avatar from './Chat/Avatar'
+import SupportWindow from './Chat/SupportWindow'
 
 export default function Ver2_Support() {
 

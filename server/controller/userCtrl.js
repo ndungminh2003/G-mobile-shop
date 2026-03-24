@@ -52,13 +52,18 @@ const login = asyncHandler(async (req, res) => {
   console.log({ email, password, role });
   const findUser = await User.findOne({ email }).populate("wishlist").exec();
   if (!findUser) {
+    console.log('fb1')
     return res.status(404).json("Email not found");
   }
   if (role !== findUser.role) {
+    console.log('fb2')
+
     return res.status(404).json(`Not Authorised, Please login as ${role}`);
   }
   const validPassword = await findUser.isPasswordMatched(password);
   if (!validPassword) {
+        console.log('fb3')
+
     return res.status(404).json("Password is not correct");
   }
 

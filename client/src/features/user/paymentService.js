@@ -1,8 +1,8 @@
 import axios from "axios";
-import { base_url } from "../../utils/baseUrl";
+import { BASE_URL } from "../../utils/baseUrl";
 
 export const getUrl = async ({ info, amount }) => {
-  const response = await axios.post(`${base_url}payment/urlpayment`, {
+  const response = await axios.post(`${BASE_URL}payment/urlpayment`, {
     amount,
     info,
   });
@@ -11,6 +11,6 @@ export const getUrl = async ({ info, amount }) => {
 };
 
 export const validatePayment = async (search) => {
-  const response = await axios.get(`${base_url}payment/validate${search}`);
+  const response = await axios.get(`${BASE_URL}payment/validate${search}`);
   return response.data;
 };

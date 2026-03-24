@@ -159,7 +159,7 @@ const SPLayout = () => {
                 <img
                   width={32}
                   height={32}
-                  src="https://stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/images/customers/customer-4-64x64.jpg"
+                  src=""
                   alt=""
                 />
               </div>

@@ -22,15 +22,15 @@ const columns = [
   {
     title: "Status",
     dataIndex: "status",
-    render: (_, { status }) => (
-      <>
-        {status === "Processing" ? <Tag color="blue">{status}</Tag> : null}
-        {status === "Completed" ? <Tag color="green">{status}</Tag> : null}
-        {status === "Cancelled" ? <Tag color="red">{status}</Tag> : null}
-        {status === "Delivering" ? <Tag color="blue">{status}</Tag> : null}
-        {status === "Not Processed" ? <Tag color="red">{status}</Tag> : null}
-      </>
-    ),
+    // render: (_, { status }) => (
+    //   <>
+    //     {status === "Processing" ? <Tag color="blue">{status}</Tag> : null}
+    //     {status === "Completed" ? <Tag color="green">{status}</Tag> : null}
+    //     {status === "Cancelled" ? <Tag color="red">{status}</Tag> : null}
+    //     {status === "Delivering" ? <Tag color="blue">{status}</Tag> : null}
+    //     {status === "Not Processed" ? <Tag color="red">{status}</Tag> : null}
+    //   </>
+    // ),
   },
 ];
 
@@ -215,13 +215,13 @@ const Dashboard = () => {
       <div className="mt-4">
         <h3 className="mb-5 title">Income Statics (Million VND)</h3>
         <div>
-          <Column {...config} />
+          {/* <Column {...config} /> */}
         </div>
       </div>
       <div className="mt-4">
         <h3 className="mb-5 title text-3xl font-bold">Recent Orders</h3>
         <div>
-          <Table columns={columns} dataSource={data1} />
+          {/* <Table columns={columns} dataSource={data1} /> */}
         </div>
       </div>
     </div>

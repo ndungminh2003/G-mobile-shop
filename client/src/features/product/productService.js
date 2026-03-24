@@ -1,17 +1,17 @@
 import axios from "axios";
 import { get_config } from "../../utils/axiosconfig";
-import { base_url } from "../../utils/baseUrl";
+import { BASE_URL } from "../../utils/baseUrl";
 
 const getProducts = async () => {
   const response = await axios.get(
-    `${base_url}product/?fields=title,price,thumbnail,slug,feature,brand,color,category`
+    `${BASE_URL}product/?fields=title,price,thumbnail,slug,feature,brand,color,category`
   );
 
   return response.data;
 };
 
 const getProductBySlug = async (slug) => {
-  const response = await axios.get(`${base_url}product/${slug}`);
+  const response = await axios.get(`${BASE_URL}product/${slug}`);
 
   return response.data;
 };
@@ -25,15 +25,15 @@ const getLimitProducts = async (limit) => {
   }
   params +=
     "fields=title,price,thumbnail,slug,feature,brand,color,category,totalrating";
-  const response = await axios.get(`${base_url}product/${params}`);
+  const response = await axios.get(`${BASE_URL}product/${params}`);
 
   return response.data;
 };
 
 const getProductByCatalog = async (params) => {
-  // const response = await axios.get(`${base_url}product/`, { params });
+  // const response = await axios.get(`${BASE_URL}product/`, { params });
   console.log("service", params);
-  const response = await axios.get(`${base_url}product/${params}`);
+  const response = await axios.get(`${BASE_URL}product/${params}`);
 
   return response.data;
 };
@@ -41,14 +41,14 @@ const getProductByCatalog = async (params) => {
 const searchProducts = async (params) => {
   const query = `?keyword=${params.keyword}&page=${params.currentPage}&limit=${params.limit}`;
   console.log("query", query);
-  const response = await axios.get(`${base_url}product/search/${query}`);
+  const response = await axios.get(`${BASE_URL}product/search/${query}`);
   console.log(response.data);
   return response.data;
 };
 
 const createProduct = async (product) => {
   let config = get_config();
-  const response = await axios.post(`${base_url}product/`, product, config);
+  const response = await axios.post(`${BASE_URL}product/`, product, config);
 
   return response.data;
 };
@@ -56,7 +56,7 @@ const createProduct = async (product) => {
 const updateProduct = async (product) => {
   let config = get_config();
   const response = await axios.put(
-    `${base_url}product/${product.id}`,
+    `${BASE_URL}product/${product.id}`,
     {
       title: product.productData.title,
       description: product.productData.description,
@@ -76,27 +76,27 @@ const updateProduct = async (product) => {
 
 const getProduct = async (id) => {
   let config = get_config();
-  const response = await axios.get(`${base_url}product/by-id/${id}`, config);
+  const response = await axios.get(`${BASE_URL}product/by-id/${id}`, config);
 
   return response.data;
 };
 
 const deleteProduct = async (id) => {
   let config = get_config();
-  const response = await axios.delete(`${base_url}product/${id}`, config);
+  const response = await axios.delete(`${BASE_URL}product/${id}`, config);
 
   return response.data;
 };
 
 const rating = async (obj) => {
   const config = get_config();
-  const response = await axios.put(`${base_url}product/rating`, obj, config);
+  const response = await axios.put(`${BASE_URL}product/rating`, obj, config);
 
   return response.data;
 };
 
 const getRelatedProduct = async (id) => {
-  const response = await axios.get(`${base_url}product/related/${id}`);
+  const response = await axios.get(`${BASE_URL}product/related/${id}`);
 
   return response.data;
 };

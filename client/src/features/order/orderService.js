@@ -1,11 +1,11 @@
 import axios from "axios";
 import { get_config } from "../../utils/axiosconfig";
-import { base_url } from "../../utils/baseUrl";
+import { BASE_URL } from "../../utils/baseUrl";
 
 const createOrder = async (order) => {
   let config = get_config();
   const response = await axios.post(
-    `${base_url}user/cart/cash-order`,
+    `${BASE_URL}user/cart/cash-order`,
     order,
     config
   );
@@ -16,7 +16,7 @@ const createOrder = async (order) => {
 const updatePaymentStatus = async (updateData) => {
   let config = get_config();
   const response = await axios.put(
-    `${base_url}user/order/update-payment/${updateData.id}`,
+    `${BASE_URL}user/order/update-payment/${updateData.id}`,
     updateData,
     config
   );
@@ -26,7 +26,7 @@ const updatePaymentStatus = async (updateData) => {
 const updateOrderStatus = async (updateData) => {
   let config = get_config();
   const response = await axios.put(
-    `${base_url}order/update-order-status/${updateData.id}`,
+    `${BASE_URL}order/update-order-status/${updateData.id}`,
     updateData,
     config
   );
@@ -36,7 +36,7 @@ const updateOrderStatus = async (updateData) => {
 const updateOrder = async (updateData) => {
   let config = get_config();
   const response = await axios.put(
-    `${base_url}order/update-order/${updateData._id}`,
+    `${BASE_URL}order/update-order/${updateData._id}`,
     updateData,
     config
   );
@@ -45,25 +45,25 @@ const updateOrder = async (updateData) => {
 
 const getOrderById = async (id) => {
   let config = get_config();
-  const response = await axios.get(`${base_url}order/get-order/${id}`, config);
+  const response = await axios.get(`${BASE_URL}order/get-order/${id}`, config);
   return response.data;
 };
 
 const getOrderByUserId = async () => {
   let config = get_config();
-  const response = await axios.get(`${base_url}order/get-user-order`, config);
+  const response = await axios.get(`${BASE_URL}order/get-user-order`, config);
   return response.data;
 };
 
 const getAllOrders = async () => {
   let config = get_config();
-  const response = await axios.get(`${base_url}order/get-all-orders`, config);
+  const response = await axios.get(`${BASE_URL}order/get-all-orders`, config);
   return response.data;
 };
 
 const deleteOrder = async (id) => {
   let config = get_config();
-  const response = await axios.delete(`${base_url}order/${id}`, config);
+  const response = await axios.delete(`${BASE_URL}order/${id}`, config);
   return response.data;
 };
 

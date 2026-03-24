@@ -288,13 +288,14 @@ export default function Banner() {
   const slides = [
     {
       url:
-        "https://fptshop.com.vn/Uploads/originals/2023/6/16/638225012888439267_1920x1080.png",
+        "banner/online_shopping_banner.jpg",
       alt: "iphone 14",
     },
     {
       url:
-        "https://cdn.dienthoaigiakho.vn/photos/1644641693487-s22ultr-info.jpg",
-      alt: "samsung",
+        "banner/banner_alter.jpg",
+      alt: "banner2",
+
     },
   ];
 
@@ -473,17 +474,17 @@ export default function Banner() {
 
       <div className=" flex flex-col mt-4 py-1 px-1 gap-3 w-[24rem] h-64 xxsm:hidden xsm:hidden sm:hidden md:hidden lg:hidden">
         <img
-          src="https://cdn2.cellphones.com.vn/690x300,webp,q10/https://dashboard.cellphones.com.vn/storage/s21-fe-right-banner-th7.png"
+          src=""
           alt=""
           className=" rounded-3xl cursor-pointer "
         />
         <img
-          src="https://cdn2.cellphones.com.vn/690x300,webp,q10/https://dashboard.cellphones.com.vn/storage/ipadth7-new.png"
+          src=""
           alt=""
           className=" rounded-3xl cursor-pointer  "
         />
         <img
-          src="https://cdn2.cellphones.com.vn/690x300,webp,q10/https://dashboard.cellphones.com.vn/storage/asus%20tuf.jpg"
+          src=""
           alt=""
           className=" rounded-3xl cursor-pointer "
         />

@@ -52,7 +52,7 @@ router.put("/order/update-payment/:id", authMiddleware, updatePaymentStatus);
 router.post("/send-otp", sendOTP);
 router.post("/login", login);
 router.post("/logout", logout);
-router.post("/admin-login", loginAdmin);
+// router.post("/admin-login", loginAdmin);
 router.post("/verify-otp", verifyOTP);
 router.post("/clear-otp", clearOTP);
 router.post("/cart", authMiddleware, userCart);
